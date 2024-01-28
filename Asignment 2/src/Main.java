@@ -1,21 +1,21 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Person>people = new ArrayList<>();
-        people.add(new Employee("John","Lennon","Manager",27045.78));
-        people.add(new Employee("George", "Harrison", "Developer", 50000.00));
-        people.add(new Student("Ringo", "Starr", 2.5));
-        people.add(new Student("Paul", "McCartney", 3.0));
-        Collections.sort(people);
-        printData(people);
+        ArrayList<Person>T = new ArrayList<>();
+        T.add(new Employee("John","Lennon","Manager",27045.78));
+        T.add(new Employee("George", "Harrison", "Developer", 50000.00));
+        T.add(new Student("Ringo", "Starr", 2.5));
+        T.add(new Student("Paul", "McCartney", 3.0));
+        Collections.sort(T);
+        printData(T);
 
     }
-    public static void printData(Iterable<Person> people){
-        for (Person person: people){
-            System.out.println(person.toString() +" earns "+ person.getPaymentAmount()+ " tenge ");
-        }
+
+    public static void printData(Iterable<Person> T) {
+        T.forEach(person ->
+                System.out.println(person.toString() + " earns " + person.getPaymentAmount() + " tenge ")
+        );
     }
 }
